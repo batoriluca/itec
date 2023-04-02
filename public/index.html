@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/68c6324e4e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@1&family=DM+Sans:wght@500&family=Fasthand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <menu>
+
+            <img src="/img/logo.png" alt="">
+            <ul>
+
+                <li>
+                    <h3>Poem Generator</h3>
+                </li>
+
+
+
+                <li class="popularpoems">
+                    <h3>Types of Poems</h3>
+                </li>
+
+
+            </ul>
+        </menu>
+        <!--<div class="intro" id="intro">
+            <i class="fa-solid fa-quote-left quoteIcon"></i>
+            <h2>To Web Or Not To Web</h2>
+            <p>poem generator</p>
+            <div class="scrollfmI">
+                <i class="fa-solid fa-chevron-down arrD"></i>
+                <i class="fa-solid fa-chevron-down arrD"></i>
+                <i class="fa-solid fa-chevron-down arrD"></i>
+            </div>
+            <h6>SCROLL TO GENERATE A POEM</h6>
+        </div>
+    -->
+        <div class="sc1">
+            <i class="fa-solid fa-pen pen"></i>
+            <h1>Tell us <span style="color:#368f28;">more details</span> about the poem you want <span style="color:#4cd137;">to generate!</span></h1>
+            <h2>First select the type of poem you want to generate:</h2>
+            <div class="options">
+                <button id="sonnet">Sonnet</button>
+                <button id="haiku">Haiku</button>
+                <button id="free_verse">Free Verse</button>
+                <button id="narrative_poetry">Narrative Poetry</button>
+                <button id="ballad">Ballad</button>
+                <button id="othertype">Other</button>
+            </div>
+            <div class="other">
+                <div class="otherinput">
+                    <form id="myFormOtherType" action="/submit" method="post">
+                        <input type="text" placeholder="Write the type here" id="otherType" name="otherType">
+                        <input type="submit" value="Select" id="selectOtherType">
+                    </form>
+                </div>
+
+                <h4 class="error">Sorry, this type of poem does not exist.</h4>
+
+            </div>
+            <h2>Now, select the words/phrases you want to appear in the poem:</h2>
+            <div class="wordss">
+                <div class="listofwords">
+                    <ul id="ulwords" class="ulWOrds">
+
+                    </ul>
+                    <button id="clear" class="clear">Clear<i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="wordinput">
+                    <input type="text" placeholder="Write the words here" id="wordInputt">
+                    <input type="submit" value="Add" id="addWord">
+                </div>
+                <h4 class="errorwords wordsNrErr">Sorry, the maximum number of words you can choose is 5.</h4>
+                <h4 class="errorwords wordNotExistErr">Sorry, <span id="wordnotaword"></span> is not a word.</h4>
+            </div>
+            <button id="generatePoem" class="generatePoemBtn">
+                Generate Poem<i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+            <h4 class="nopoemselectederr">Please select a type of poem</h4>
+        </div>
+        <div class="sc2">
+            <i class="fa-solid fa-feather-pointed feather"></i>
+            <div class="leftside">
+                <h1>
+                    Your poem <span style="color:#4cd137;">has been generated!</span>
+                </h1>
+                <h2>
+                    Type of poem used:
+                </h2>
+                <h2 id="typeused" class="typeused">Sonnet</h2>
+                <h2>
+                    Words used:
+                </h2>
+                <ul id="wordsused">
+                    <li>Hello</li>
+                    <li>World</li>
+                </ul>
+            </div>
+            <div class="rightside">
+                <div class="genPoemCard">
+                    <div class="image">
+                        <img src="img/example.png" alt="" id="imgBlur" class="bluredImg">
+                        <img src="img/example.png" alt="" id="img" class="normalImg">
+                    </div>
+                    <div class="poemText">
+                        <h3 class="poemtitle" id="poemtitle">
+                            Title
+                        </h3>
+                        <pre>
+In a land of ice and snow,
+Where the winds of winter blow,
+There lived a brave and noble king,
+Whose praises all the bards did sing.
+
+His kingdom was a place of peace,
+Where troubles and worries did cease,
+But one day, an army came,
+To threaten his land with war and flame.
+
+The king, he rallied all his men,
+And rode out to the battlefield then,
+The clash of swords, the thunder of hooves,
+Echoed through the land, a battle that proves.
+
+For days and nights, they fought and bled,
+Until the enemy army was finally led,
+To surrender to the king's command,
+And peace returned to the land.
+
+And so the king, he ruled in peace,
+His people's joys he did increase,
+And all the bards did sing his praise,
+For he had led them through dark days.
+
+The kingdom thrived, the people grew,
+And all because the king, he knew,
+That courage and honor must prevail,
+To keep his kingdom safe and hale.
+                    </pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="sc3">
+            <i class="fa-solid fa-quote-right quote"></i>
+            <div class="leftside">
+                <h1><span style="color: #4cd137;">Read</span> & <span style="color: #368f28;">Learn</span> about poem types!</h1>
+                <h2>Read a <span style="color: #4cd137;">short description </span>about 20 poem types and select the one you like the most!</h2>
+            </div>
+            <div class="rightside">
+                <div class="card">
+                    <h1 class="cardtitle">Sonnet</h1>
+                    <p class="carddesc">A 14-line poem with a specific rhyme scheme and meter, traditionally used to express love or deep emotion.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Haiku</h1>
+                    <p class="carddesc">A three-line poem with a 5-7-5 syllable count, typically focusing on nature and capturing a single moment or image.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Free Verse</h1>
+                    <p class="carddesc">A poem that does not follow a specific rhyme or meter pattern, giving the poet complete creative freedom to express their thoughts and emotions.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Narrative Poetry</h1>
+                    <p class="carddesc">A poem that tells a story, with a clear beginning, middle, and end, often featuring characters and a plot.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Ballad</h1>
+                    <p class="carddesc">A poem that tells a story through song, often featuring a refrain, and typically focused on love, betrayal, or adventure.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Epic Poetry</h1>
+                    <p class="carddesc">A long, narrative poem that typically follows a hero's journey and explores themes of love, war, and honor.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Ode</h1>
+                    <p class="carddesc">A poem that praises or celebrates a person, place, or thing, often written in a formal style.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Elegy</h1>
+                    <p class="carddesc">A poem that mourns the loss of someone or something, often written in a somber or melancholic tone.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Ghazal</h1>
+                    <p class="carddesc">A poem of Middle Eastern origin, consisting of rhyming couplets and a refrain, often focused on themes of love, loss, and separation.</p>
+                </div>
+
+                <div class="card">
+                    <h1 class="cardtitle">Pantoum</h1>
+                    <p class="carddesc">A poem consisting of four-line stanzas in which the second and fourth lines of each stanza serve as the first and third lines of the next stanza, with the final stanza repeating the first and third lines of the first stanza.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Sestina</h1>
+                    <p class="carddesc">A poem consisting of six six-line stanzas and a three-line concluding stanza, with a specific pattern of repeating end-words.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Tanka</h1>
+                    <p class="carddesc">A five-line poem with a 5-7-5-7-7 syllable count, typically focused on nature and emotions.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Rondeau</h1>
+                    <p class="carddesc">A poem consisting of thirteen lines, with a specific rhyme scheme and repeating lines, often used for light or humorous subjects.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Triolet</h1>
+                    <p class="carddesc">An eight-line poem with a specific rhyme scheme and repeating lines, typically used for light or humorous subjects.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Acrostic</h1>
+                    <p class="carddesc">A poem in which the first letter of each line spells out a word or phrase, often used for puzzles or to convey a hidden message.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Concrete</h1>
+                    <p class="carddesc">A poem in which the visual arrangement of the words on the page forms a picture related to the content of the poem.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Epigram</h1>
+                    <p class="carddesc">A short, witty poem or saying, often used to make a pointed observation or criticism.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Ekphrastic</h1>
+                    <p class="carddesc">A poem inspired by a work of art, often focused on the emotions or thoughts the art evokes in the poet.</p>
+                </div>
+                <div class="card">
+                    <h1 class="cardtitle">Prose Poetry</h1>
+                    <p class="carddesc">A poem written in prose form, without a specific meter or rhyme scheme, but still using poetic language and techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        const form = document.getElementById('myFormOtherType');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('otherType').value;
+            fetch('/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.yesorno === "No") {
+                        document.querySelector(".error").setAttribute("style", "display:block;")
+                        setTimeout(() => {
+                            document.querySelector(".error").setAttribute("style", "display:none;")
+                        }, 5000)
+
+                        document.querySelector("#otherType").value = "";
+                    }
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+        });
+    </script>
+</body>
+
+</html>
